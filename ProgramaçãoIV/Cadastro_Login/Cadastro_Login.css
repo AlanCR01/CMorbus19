@@ -84,9 +84,10 @@ body{
 }
 .first_column{
     width: 40%;
+    display: flex;
     height: 90%;
     align-self: center;
-
+    justify-content: center;
     background-color: transparent; 
 }
 
@@ -101,7 +102,7 @@ body{
 .form{
     display: flex;
     flex-direction: column;
-    width: 55%;     
+    width: 55%;    
 }
 .title{
     text-transform: capitalize;
@@ -313,8 +314,106 @@ input:-webkit-autofill /*precisa colocar para que nos input fique sempre com a c
 }
 
 
-/*Acrecentando responsividade*/
+/*Acrescentando responsividade*/
 
 @media screen and (max-width: 1040px) {
+    #secao_principal{
+       
+        flex-direction: column;
+    }
+    .container_form{
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    .first_content{
+        outline: black 1px solid;
+    }
+    .first_content, .second_content{
+        flex-direction: column;
+        height: 100%;
+    }
+    .container_form::before{
+        width: 100%;
+        height: 40%;
+        bottom: 0;
+    }
+    .container_form::after{
+        width: 100%;
+        height: 60%;
+        top: 0;
+        border-radius: 0%;
+    }
+    .first_column, .second_column{
+        width: 100%; 
+    }
+    .first_column{
+        order: 2;
+        height: 40%;
     
+    }
+    .second_column{
+        order: 1;
+        height: 60%;
+        outline: 
+    }
+    .form{
+        width: 80%;
+    }
+
+    @keyframes coluna1_vai_para_coluna2{/* parte do cadastro, essa parte irá na primeira coluna onde tem para o user coluna1_vai_para_coluna2 se ja possuir conta*/
+
+        from{
+            bottom: 0;
+            height: 60%;
+            background-color:  var(--cor_inicial);
+            z-index: 1;
+            width: 100%;
+        }
+        50%{
+            bottom: 30%;
+            background-color: var(--cor_segundaria);
+            z-index: 1;
+        }
+        
+        75%{
+            width: 100%;
+            height: 70%;
+            background-color:  var(--cor_terciaria);
+            z-index: 1;
+        }
+        to{
+            bottom: 40%;
+            width: 100%;
+            height: 60%;
+            background-color: var(--cor_quartenaria);
+            z-index: 1;
+        }
+    }
+
+    @keyframes coluna2_vai_para_coluna1{
+        from{
+            top: 0;
+            background-color: var(--cor_quartenaria);
+        }
+        50%{
+            top: 10%;
+            height: 95%;
+            background-color: var(--cor_terciaria);
+        }
+        75%{
+            top: 30%;
+            height: 92.5%;
+            border-top-right-radius: 8.2px ;
+            border-bottom-right-radius: 5px ;
+            background-color: var(--cor_segundaria);
+        }
+        to{
+            top: 60%;
+            height: 90%;
+            background-color: var(--cor_inicial);
+        }
+    
+    }
+
 }
