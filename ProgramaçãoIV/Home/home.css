@@ -7,17 +7,81 @@ body{
 #secao_principal{
     display: block;
     margin: 0px 25px;
-    
+    outline: 4px solid yellow;
     padding: 5px;
+    background-color: yellow;
+    width: 80%;
+    margin: 0 auto;
 }
+
+/*design da parte onde tem as figuras dos sintomas*/
+#container_sintoma{
+    background-color: rgb(212, 109, 109);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 25px 0;
+    padding: 25px 0;
+}
+
+.sintomas{
+ outline: olive 1px solid;
+ width: 45%;
+ display: flex;
+ justify-content: space-around;
+ flex-wrap: wrap;
+ align-content: center;
+}
+.img_sintoma{
+    border-radius: 40%;
+    border:none;
+    background-color: rgb(0, 0, 0);
+}
+.img_sintoma1{
+    border-radius: 40%;
+    border:none;
+    background-color: rgb(255, 255, 255);
+}
+.container_recomendacao{
+ outline: orangered 2px solid;
+ width: 55%;
+ padding: 25px;
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: row;
+
+}
+.recomendacoes{
+    outline: rgb(243, 242, 241) 2px solid;
+    width: 60%;
+    text-indent: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.medico_instrucao{
+    outline: rgb(243, 122, 0) 2px solid;
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* FIM design da parte onde tem as figuras dos sintomas*/
+
+
 #painel{
     position: relative;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  outline: goldenrod 2px solid ;
-    width: 80%;
+    background-color: violet;
+ 
     min-height: 500px;
 }
 #estatistica{
@@ -136,3 +200,27 @@ body{
     margin-left: 25px;
 }
 
+
+
+
+/*aqui ficara a parte da secao de perguntas dos usuarios para os medicos*/
+
+#secao_perguntas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: plum;
+    margin: 25px 0;
+
+}
+.medicos{
+    display: flex;
+}
+.pergunta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: powderblue;
+}
