@@ -354,8 +354,7 @@ input:-webkit-autofill /*precisa colocar para que nos input fique sempre com a c
     }
     .second_column{
         order: 1;
-        height: 60%;
-        outline: 
+        height: 60%; 
     }
     .form{
         width: 80%;
@@ -410,10 +409,10 @@ input:-webkit-autofill /*precisa colocar para que nos input fique sempre com a c
         }
         to{
             top: 60%;
-            height: 90%;
+            height: 40%;
             background-color: var(--cor_inicial);
         }
     
     }
 
-}
+} /*fim da media screem max 1040px
