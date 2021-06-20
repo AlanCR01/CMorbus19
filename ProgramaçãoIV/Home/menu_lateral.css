@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@300&display=swap');
+
+*{
+    margin: 0%;padding: 0%;box-sizing: border-box;font-family: 'Poppins', sans-serif;
+}
+:root{
+    --background_geral: rgb(16, 148, 115);
+
+    --background_menu: rgb(0, 0, 0);
+   --cards_color_background:rgb(0, 0, 0);
+   --cards_box_shadow: rgba(21, 131, 165, 0.377);
+   --cards_border:rgba(23, 141, 156, 0);
+   --colors_text:rgb(255, 255, 255);
+   --esta_regiao_background:var(--cards_color_background);
+   --esta_regiao_box_shadow:var(--cards_box_shadow);
+   --esta_regiao_border:var(--cards_border);
+
+   --colors_text_tooltip: #000;
+}
+#container_principal{
+    background:var(--background_geral);
+}
+
+/*formatacoes do menu lateral*/
+#container_menu{
+    background: var(--background_menu);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 60px;
+    padding: 4px 5px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    transition: all 0.5s ease;
+    color: var(--colors_text);
+}
+.container_logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.logo{
+    font-size: 25px;
+    display: none;
+}
+.botao_menu{
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.container_perfil_lista{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container_perfil{
+
+    flex-direction: column;
+    display: none;
+}
+
+.foto_perfil{   /*aqui onde estara a foto do perfil do usuario*/
+    height: 150px;
+}
+.informacao_perfil{ /*e um container para informacoes que o usuario tem nome idade etc*/
+    display: flex;
+    flex-direction: column;
+   
+    height: 70px;
+    align-items: center;
+}
+.perfil_informacao{/*informacoes do user idade genero altura peso*/
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    margin-top: 9px;
+}
+.menu ul{
+    list-style: none;
+}
+.menu ul li{
+    height: 50px;
+    width: 100%;
+    position: relative;
+
+}
+.menu a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition:  all .4s ease;
+    
+}
+.menu a:hover{
+    background-color: #fff;
+    border-radius: 15px;
+    color: black;
+}
+.menu a i{
+    height: 50px;
+    min-width: 50px;
+    text-align: center;
+    line-height: 50px;
+} 
+.links_nome{
+    display: none;
+    margin-right: 20px;
+}
+
+.tooltip{
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translateX(-50%);
+    width: 122px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    line-height: 35px;
+    text-align: center;
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--colors_text_tooltip);
+}
+.menu li:hover .tooltip{ /*para quando o menu estiver pequeno o user mover o mouse em cima dos links aparece o toolkit*/
+    top: 50%;
+    transition: all .5s ease;
+    opacity: 1;
+
+}
+
+
+.container_sair{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    
+}
+.container_sair img{
+    align-self: center;
+    cursor: pointer;
+}
+.sair{
+    display: none;
+}
+
+/*o menu ira iniciar pequeno e quando clicado ira vir essas formatacoes*/
+#container_menu.active{
+    width: 200px;
+}
+#container_menu.active .tooltip{
+    opacity: 0;
+}
+#container_menu.active .links_nome{
+    display: block;
+}
+#container_menu.active .sair{
+    display: block;
+}
+#container_menu.active .container_sair{
+    justify-content: space-around;
+}
+#container_menu.active .container_perfil{
+    display: flex;
+}
+#container_menu.active .logo{
+    display: block;
+}
+
+/* fim formatacoes do menu lateral*/
+
+
+
+#secao_principal{
+    display: block;
+    padding: 5px 0px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#painel{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+}
+#estatistica{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+     margin: 25px 0;
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 200px;
+    margin: 0 3px;
+    padding: 10px;
+    color: var(--colors_text);
+    background: var(--cards_color_background);
+    box-shadow: 0 4px 16px 0 var(--cards_box_shadow);
+    border: 1px solid var(--cards_border);
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+#estatistica_regiao{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--esta_regiao_background);
+    box-shadow: 0 8px 32px 0 var( --esta_regiao_box_shadow);
+    border: 1px solid var(--esta_regiao_border);
+    border-radius: 15px;
+    border: none;
+    color: var(--colors_text);
+
+}
+.header_estatistica_regiao{
+  
+   text-align: center;
+}
+
+#mapa_regiao{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+    position: relative;
+}
+.mapa{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.container_regioes{
+    width: 70%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+
+}
+.header_regioes{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.column{
+    text-align: center;
+}
+.column1{
+    width: 100px;
+ 
+}
+.column2{
+    width: 100px;
+    
+}
+.column3{
+    width: 150px;
+}
+.regioes{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 80%;
+
+    margin-top: 10px;
+}
+.regiao{
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.nome_regiao{
+    display: flex;
+    justify-self: flex-start;
+    position: relative;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.casos_regiao{
+    display: flex;
+    justify-content: flex-end;
+}
+.regiao:not(:last-child){
+    border-bottom: .8px solid rgb(112, 111, 116);
+}
+.regioes .regiao:not(:first-child) .nome_regiao{
+    margin-left: 25px;
+}
+.seta_regiao{
+    display: flex;
+}
+.estado{
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.nome_estado{
+    margin-left: 60px;
+   
+}
+.casos_estado{
+    display: flex;
+  
+}
+.estados{
+    width: 100%;
+    display: none;
+}
+.estado_sul.active{
+    display: block;
+}
+.estado_norte.active{
+    display: block;
+}
+.estado_sudeste.active{
+    display: block;
+}
+.estado_nordeste.active{
+    display: block;
+}
+.estado_centro.active{
+    display: block;
+}
+
+
+
+
+
+/*aqui ficara a parte da secao de perguntas dos usuarios para os medicos*/
+
+#secao_perguntas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: var(--cards_color_background);
+    box-shadow: 0 4px 16px 0 var(--cards_box_shadow);
+    border: 1px solid var(--cards_border);
+    margin: 25px 0;
+    border-radius: 25px;
+    border-style: none;
+    color: var(--colors_text);
+    padding: 25px;
+}
+.medicos{
+    display: flex;
+}
+.pergunta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#container_lateral{
+    width: 180px;
+    background: yellowgreen;
+    position: fixed;
+    top: 0%;
+    right: 0;
+    display: flex;
+
+}
+
+
+
+
+
+
+
+
+
+
