@@ -67,6 +67,7 @@
 
 .foto_perfil{   /*aqui onde estara a foto do perfil do usuario*/
     height: 150px;
+    align-self: center;
 }
 .informacao_perfil{ /*e um container para informacoes que o usuario tem nome idade etc*/
     display: flex;

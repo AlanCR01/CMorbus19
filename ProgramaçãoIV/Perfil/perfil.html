@@ -5,6 +5,10 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="perfil.css">
     </head>
+    <?php
+        session_start();
+        echo $_SESSION['cod_usu'];
+    ?>
     <body>
         <a href="../Home/home.html"><img src="seta_voltar.png" alt="seta_voltar" class="seta_voltar"></a>
         <section id="principal">

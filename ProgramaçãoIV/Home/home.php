@@ -15,7 +15,10 @@
                header('Location: ../Cadastro_Login/Cadastro_Login.html');
             }
             $logado = $_SESSION['login'];
+            
             include ("../Cadastro_Login/conecta.php");
+            $codigo = $_SESSION['cod_usu'];
+            
         ?>
     <body>
         
@@ -31,19 +34,19 @@
                <div class="container_perfil_lista">
                     <div class="container_perfil">
                         <div class="foto_perfil">
-                            <img src="" alt="">Foto perfil
+                        <img src="../Perfil/avatar_fem.png" alt="" width="155px">
                         </div>
                         <div class="informacao_perfil">
                             <div class="perfil_nome">
-                                <span class="informacao">Nome:</span>
+                                <span class="informacao"><?= $_SESSION['login']; ?></span>
                             </div>
                             <div class="perfil_informacao">
-                                <span class="informacao">Idade:</span>
-                                <span class="informacao">Peso:</span>
+                                <span class="informacao">Idade: </span>
+                                <span class="informacao">Peso: </span>
                             </div>
                             <div class="perfil_informacao">
-                                <span class="informacao">Genero:</span>
-                                <span class="informacao">Altura:</span>
+                                <span class="informacao">Genero: </span>
+                                <span class="informacao">Altura: </span>
                             </div>
 
                         </div>
