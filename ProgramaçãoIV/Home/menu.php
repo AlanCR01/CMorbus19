@@ -6,6 +6,8 @@
     <div class="botao_menu" ><img src="images/botao_menu.png" width="20px" id="btn_menu" ></div>
 </div>
 
+<?php  require_once("pega_dado_menu_home.php");  //irá pegar os dados do user para mostrar no menu ?>   
+
 <div class="container_perfil_lista">
     <?php 
        if(mysqli_num_rows($sql_perfil)>0){
@@ -15,22 +17,22 @@
                 
                        <?php  if($gen_pac == 'M'){ ?>
                              <img src="../Perfil/avatar_masc.png" alt="" width="140px">
-                         <?php }else ?>
+                         <?php }else {?>
                          <img src="../Perfil/avatar_fem.png" alt="" width="140px">
-                     
+                            <?php }?>
            
                  </div>
                  <div class='informacao_perfil'>
                      <div class='perfil_nome'>
-                         <span class='informacao'> ". $_SESSION['login']." </span>
+                         <span class='informacao'><?= $_SESSION['login']?> </span>
                      </div>
                      <div class='perfil_informacao'>
-                         <span class='informacao'>Idade: ". $idade." </span>
-                         <span class='informacao'>Peso: ". $peso."</span>
+                         <span class='informacao'>Idade: <?= $idade ?></span>
+                         <span class='informacao'>Peso: <?= $peso ?></span>
                      </div>
                      <div class='perfil_informacao'>
-                         <span class='informacao'>Genero: ". $gen_pac ."</span>
-                         <span class='informacao'>Altura: ".  $altura ."</span>
+                         <span class='informacao'>Genero: <?= $gen_pac ?></span>
+                         <span class='informacao'>Altura: <?=  $altura ?></span>
                      </div>
 
                  </div>

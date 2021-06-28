@@ -1,3 +1,5 @@
+
+<?php 
 /*aqui ira verificar se o usuario esta logado para que nao consigam burlar o sistema digitando direto na url a página home*/
            
            
@@ -11,3 +13,5 @@
             
             include ("../Cadastro_Login/conecta.php");
             $codigo = $_SESSION['cod_usu'];
+
+            ?>

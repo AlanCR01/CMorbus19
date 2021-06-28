@@ -5,16 +5,10 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="home.css">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-         <!--script para seta dos estados-->
-         <script src="setas_estados.js"> </script>
-         <!--script para o menu barra lateral-->
-        <script src="abre_menu.js"></script>
+         
     </head>
     <?php
-            require_once("esta_conectado.php");// para verificar se tem usuário logado pois o site so opera com usuário logados
-
-             require_once("pega_dado_menu_home.php");  //irá pegar os dados do user para mostrar no menu         
-           
+        require_once("esta_conectado.php");// para verificar se tem usuário logado pois o site so opera com usuário logados    
         ?>
     <body>
 
@@ -34,6 +28,13 @@
                  <img src="images/faq.png" alt="faq" class="faq_img" width="80px">
             </div>
         </section><!--Fim do container principal-->
-  
+        
+        
+        <!--script para seta dos estados-->
+        <script src="setas_estados.js" type="text/javascript"> </script>
+         <!--script para o menu barra lateral-->
+        <script src="abre_menu.js" type="text/javascript"></script>
+
+        
     </body>
 </html>

@@ -1,5 +1,6 @@
-/*no menu lateral tera uma pequena apresentacao das informacoes do user*/
+
 <?php
+/*no menu lateral tera uma pequena apresentacao das informacoes do user*/
                 $sql_perfil = mysqli_query($conexao,"select * from info_perfil_home_vw where cod_usu = '".$codigo."'");
                 if(mysqli_num_rows($sql_perfil)>0){
                     while($perfil = mysqli_fetch_assoc($sql_perfil)){
