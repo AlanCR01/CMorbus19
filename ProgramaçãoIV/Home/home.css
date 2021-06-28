@@ -188,11 +188,19 @@
 
 
 
+
+
+
+
+
+
 #secao_principal{
     display: block;
     padding: 5px 0px;
     width: 70%;
     margin: 0 auto;
+    background-color: orange;
+    outline: 2px solid red ;
 }
 
 #painel{
